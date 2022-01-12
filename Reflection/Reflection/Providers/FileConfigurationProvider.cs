@@ -1,17 +1,7 @@
-﻿using Reflection.CustomAttributes;
-
-namespace Reflection.Providers
+﻿namespace Reflection.Providers
 {
-    public class FileConfigurationProvider<T> where T : struct
+    public class FileConfigurationProvider
     {
-        public T Read(string settingName)
-        {
-            return default(T);
-        }
-
-        public void Write(string settingName, T value)
-        {
-            
-        }
+        
     }
 }
