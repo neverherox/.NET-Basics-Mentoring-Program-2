@@ -22,6 +22,6 @@ namespace Reflection.CustomAttributes
     public enum ProviderType
     {
         File,
-        Configuration
+        Appsetings
     }
 }
