@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<File>
+  <RetryCount>3</RetryCount>
+  <Timeout>00:01:00</Timeout>
+  <ConnectionString>connection</ConnectionString>
+  <RelativeError>
+  </RelativeError>
+</File>

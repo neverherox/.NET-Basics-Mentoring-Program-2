@@ -5,37 +5,37 @@ using Reflection.Interfaces;
 
 namespace Reflection.Components
 {
-    public class AppSettings: ConfigurationComponentBase
+    public class File : ConfigurationComponentBase
     {
-        public AppSettings(IProvidersFactory providersFactory) : base(providersFactory)
+        public File(IProvidersFactory providersFactory) : base(providersFactory)
         {
 
         }
 
-        [ConfigurationItem(ProviderType.AppSetings, "ConnectionString")]
+        [ConfigurationItem(ProviderType.File, "ConnectionString")]
         public override string ConnectionString
         {
             get => base.ConnectionString;
             set => base.ConnectionString = value;
         }
 
-        [ConfigurationItem(ProviderType.AppSetings, "Timeout")]
+        [ConfigurationItem(ProviderType.File, "Timeout")]
         public override TimeSpan? Timeout
         {
             get => base.Timeout;
             set => base.Timeout = value;
         }
 
-        [ConfigurationItem(ProviderType.AppSetings, "RetryCount")]
+        [ConfigurationItem(ProviderType.File, "RetryCount")]
         public override int? RetryCount
         {
             get => base.RetryCount;
             set => base.RetryCount = value;
         }
 
-        [ConfigurationItem(ProviderType.AppSetings, "RelativeError")]
-        public override float? RelativeError 
-        { 
+        [ConfigurationItem(ProviderType.File, "RelativeError")]
+        public override float? RelativeError
+        {
             get => base.RelativeError;
             set => base.RelativeError = value;
         }

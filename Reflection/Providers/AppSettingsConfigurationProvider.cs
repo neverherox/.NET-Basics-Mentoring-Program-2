@@ -1,22 +1,27 @@
-﻿using System.IO;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.IO;
 using Newtonsoft.Json.Linq;
+using PluginBase;
+using Formatting = Newtonsoft.Json.Formatting;
 
-namespace Reflection.Providers
+namespace Providers
 {
-    public class AppsetingsConfigurationProvider
+    public class AppSettingsConfigurationProvider : IConfigurationProvider
     {
+        public ProviderType ProviderType { get; } = ProviderType.AppSetings;
+
+        public string FilePath { get; set; }
+
         public object Read(string key)
         {
-            var json = File.ReadAllText(@"..\..\..\appsettings.json");
+            var json = File.ReadAllText(FilePath);
             dynamic jsonObj = JsonConvert.DeserializeObject<JObject>(json);
             return jsonObj[key];
         }
 
         public void Write(string key, object value)
         {
-            var filePath = Path.Combine(@"..\..\..\appsettings.json");
-            var json = File.ReadAllText(filePath);
+            var json = File.ReadAllText(FilePath);
             dynamic jsonObj = JsonConvert.DeserializeObject<JObject>(json);
             jsonObj[key] = null;
             if (value != null)
@@ -24,7 +29,7 @@ namespace Reflection.Providers
                 jsonObj[key] = value.ToString();
             }
             string output = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
-            File.WriteAllText(filePath, output);
+            File.WriteAllText(FilePath, output);
         }
     }
 }

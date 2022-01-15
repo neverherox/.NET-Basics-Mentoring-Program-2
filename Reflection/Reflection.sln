@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection", "Reflection\Reflection.csproj", "{854B41B1-24B6-4BE6-B68F-C3397F5996ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reflection", "Reflection\Reflection.csproj", "{854B41B1-24B6-4BE6-B68F-C3397F5996ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Providers", "Providers\Providers.csproj", "{90B7E667-E903-457B-A913-FB1B8E30119C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginBase", "PluginBase\PluginBase.csproj", "{509C8A8E-A6C3-4ADE-BF80-7D8784DC0CB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{854B41B1-24B6-4BE6-B68F-C3397F5996ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{854B41B1-24B6-4BE6-B68F-C3397F5996ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{854B41B1-24B6-4BE6-B68F-C3397F5996ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90B7E667-E903-457B-A913-FB1B8E30119C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B7E667-E903-457B-A913-FB1B8E30119C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B7E667-E903-457B-A913-FB1B8E30119C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B7E667-E903-457B-A913-FB1B8E30119C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{509C8A8E-A6C3-4ADE-BF80-7D8784DC0CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509C8A8E-A6C3-4ADE-BF80-7D8784DC0CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509C8A8E-A6C3-4ADE-BF80-7D8784DC0CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509C8A8E-A6C3-4ADE-BF80-7D8784DC0CB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

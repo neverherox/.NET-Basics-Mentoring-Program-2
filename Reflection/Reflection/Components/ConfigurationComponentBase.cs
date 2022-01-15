@@ -1,34 +1,105 @@
 ﻿using System;
 using Reflection.CustomAttributes;
-using Reflection.Providers;
+using Reflection.Interfaces;
 
 namespace Reflection.Components
 {
     public abstract class ConfigurationComponentBase
     {
-        public object LoadSetting(string propertyName)
+        private readonly IProvidersFactory _providersFactory;
+
+        protected ConfigurationComponentBase(IProvidersFactory providersFactory)
+        {
+            _providersFactory = providersFactory;
+        }
+
+        public virtual string ConnectionString
+        {
+            get
+            {
+                var value = LoadSetting(nameof(ConnectionString));
+                if (value != null)
+                {
+                    return value.ToString();
+                }
+                return null;
+            }
+            set => SaveSetting(nameof(ConnectionString), value);
+        }
+
+        public virtual TimeSpan? Timeout
+        {
+            get
+            {
+                var value = LoadSetting(nameof(Timeout));
+                if (value != null)
+                {
+                    if (TimeSpan.TryParse(value.ToString(), out TimeSpan timeSpan))
+                    {
+                        return timeSpan;
+                    }
+                }
+                return null;
+            }
+            set => SaveSetting(nameof(Timeout), value);
+        }
+
+        public virtual int? RetryCount
+        {
+            get
+            {
+                var value = LoadSetting(nameof(RetryCount));
+                if (value != null)
+                {
+                    if (int.TryParse(value.ToString(), out int retryCount))
+                    {
+                        return retryCount;
+                    }
+                }
+                return null;
+            }
+            set => SaveSetting(nameof(RetryCount), value);
+        }
+
+        public virtual float? RelativeError
+        {
+            get
+            {
+                var value = LoadSetting(nameof(RelativeError));
+                if (value != null)
+                {
+                    if (float.TryParse(value.ToString(), out float relativeError))
+                    {
+                        return relativeError;
+                    }
+                }
+                return null;
+            }
+            set => SaveSetting(nameof(RelativeError), value);
+        }
+
+        protected virtual object LoadSetting(string propertyName)
         {
             var attribute = GetAttribute(propertyName);
             if (attribute != null)
             {
-                if (attribute.Type == ProviderType.Appsetings)
+                var provider = _providersFactory.GetProvider(attribute.Type);
+                if (provider != null)
                 {
-                    var provider = new AppsetingsConfigurationProvider();
-                    var value = provider.Read(attribute.Setting);
-                    return value;
+                    return provider.Read(attribute.Setting);
                 }
             }
             return null;
         }
 
-        public void SaveSetting(string propertyName, object value)
+        protected virtual void SaveSetting(string propertyName, object value)
         {
             var attribute = GetAttribute(propertyName);
             if (attribute != null)
             {
-                if (attribute.Type == ProviderType.Appsetings)
+                var provider = _providersFactory.GetProvider(attribute.Type);
+                if (provider != null)
                 {
-                    var provider = new AppsetingsConfigurationProvider();
                     provider.Write(attribute.Setting, value);
                 }
             }
