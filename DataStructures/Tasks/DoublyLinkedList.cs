@@ -48,6 +48,7 @@ namespace Tasks
                     found.Previous.Next = node;
                     found.Previous = node;
                 }
+                Length++;
             }
             else
             {
