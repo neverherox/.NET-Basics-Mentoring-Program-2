@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz", "FizzBuzz\FizzBu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzUnitTests", "FizzBuzzUnitTests\FizzBuzzUnitTests.csproj", "{368C8C4A-B10D-4AF6-BB7B-052565E8BDCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCD", "LCD\LCD.csproj", "{62D2ABAD-3C96-4A05-BC73-802AD8AA24A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCDUnitTests", "LCDUnitTests\LCDUnitTests.csproj", "{F17CCEC0-9420-472E-A33C-209FF32C2149}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{368C8C4A-B10D-4AF6-BB7B-052565E8BDCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{368C8C4A-B10D-4AF6-BB7B-052565E8BDCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{368C8C4A-B10D-4AF6-BB7B-052565E8BDCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D2ABAD-3C96-4A05-BC73-802AD8AA24A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D2ABAD-3C96-4A05-BC73-802AD8AA24A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D2ABAD-3C96-4A05-BC73-802AD8AA24A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D2ABAD-3C96-4A05-BC73-802AD8AA24A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F17CCEC0-9420-472E-A33C-209FF32C2149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17CCEC0-9420-472E-A33C-209FF32C2149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17CCEC0-9420-472E-A33C-209FF32C2149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17CCEC0-9420-472E-A33C-209FF32C2149}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
