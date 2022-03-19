@@ -120,6 +120,10 @@ namespace Library.Repositories
             using var con = new SqlConnection(_connectionString);
             var cmd = new SqlCommand("DeleteOrders", con);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@month", month);
+            cmd.Parameters.AddWithValue("@status", (int?)status);
+            cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@productId", productId);
             con.Open();
             cmd.ExecuteNonQuery();
         }
