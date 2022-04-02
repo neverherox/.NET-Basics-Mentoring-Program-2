@@ -454,10 +454,7 @@ namespace Data.Context
                     .HasConstraintName("FK_Order_Details_Orders");
 
                 entity.HasOne(d => d.Product)
-                    .WithMany(p => p.OrderDetails)
-                    .HasForeignKey(d => d.ProductId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Order_Details_Products");
+                    .WithMany(p => p.OrderDetails);
             });
 
             modelBuilder.Entity<OrderDetailsExtended>(entity =>
@@ -575,9 +572,7 @@ namespace Data.Context
                 entity.Property(e => e.UnitsOnOrder).HasDefaultValueSql("((0))");
 
                 entity.HasOne(d => d.Category)
-                    .WithMany(p => p.Products)
-                    .HasForeignKey(d => d.CategoryId)
-                    .HasConstraintName("FK_Products_Categories");
+                    .WithMany(p => p.Products);
 
                 entity.HasOne(d => d.Supplier)
                     .WithMany(p => p.Products)
